@@ -64,7 +64,7 @@ class Example(QMainWindow):
 
     def __init_signals(self):
         self.backward.triggered.connect(self.previous_page)
-        self.forward.triggered.connect(self.last_page)
+        self.forward.triggered.connect(self.next_page)
         self.open.triggered.connect(self.show_dialog)
         self.closeFile.triggered.connect(self.close)
         self.pageBox.currentIndexChanged.connect(self.open_page)
