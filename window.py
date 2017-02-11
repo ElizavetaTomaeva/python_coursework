@@ -4,7 +4,7 @@ from PyQt5.QtWidgets import (QMainWindow, QWidget, QTextEdit,
                              QDockWidget, QComboBox, QListView, QListWidget, QGraphicsAnchorLayout)
 from PyQt5.QtGui import QIcon
 from PyQt5.QtGui import QPixmap
-import repack
+import unpack
 import sys
 from os.path import exists
 
@@ -75,14 +75,14 @@ class Example(QMainWindow):
         if self.bookfile:
             count = 0
             self.pageBox.show()
-            for page_num in repack.all_pages(repack.extract(self.bookfile)):  # страницы в выпадающем списке
+            for page_num in unpack.all_pages(unpack.extract(self.bookfile)):  # страницы в выпадающем списке
                 self.pageBox.addItem(str(count))
                 count += 1
         else:
             return
 
     def open_page(self):  # загрузка страницы по номеру из выпадающего списка
-        page = repack.all_pages(repack.extract(self.bookfile))[self.get_combo_box_index()]
+        page = unpack.all_pages(unpack.extract(self.bookfile))[self.get_combo_box_index()]
         self.myPixmap = QPixmap(page).scaledToWidth(self.width())
         self.imageArea.setPixmap(self.myPixmap)
 
