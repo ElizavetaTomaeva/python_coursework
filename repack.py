@@ -5,8 +5,7 @@ from os.path import splitext, basename, expanduser, exists, dirname
 import shutil
 from rarfile import RarFile
 
-
-def extract(link):  # запись содержимого архива во временную папку
+def extract(link):  # запись содержимого архива во временную директорию
     temp = os.path.join(expanduser('~/.current/'), splitext(basename(link))[0])
     if exists(temp):
         shutil.rmtree(temp)
