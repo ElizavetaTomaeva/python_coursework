@@ -65,12 +65,12 @@ class Example(QMainWindow):
     def __init_signals(self):
         self.backward.triggered.connect(self.previous_page)
         self.forward.triggered.connect(self.last_page)
-        self.open.triggered.connect(self.showDialog)
+        self.open.triggered.connect(self.show_dialog)
         self.closeFile.triggered.connect(self.close)
         self.pageBox.currentIndexChanged.connect(self.open_page)
         self.exit.triggered.connect(self.close)
 
-    def showDialog(self):  # диалог открытия файла
+    def show_dialog(self):  # диалог открытия файла
         self.bookfile = QFileDialog.getOpenFileName(self, 'Open file', '/home', "Comic Book Archive files (*.cbz *.cbr)")[0]
         if self.bookfile:
             count = 0
@@ -97,7 +97,7 @@ class Example(QMainWindow):
     def previous_page(self, new_index):  # пролистывание назад
         return self.pageBox.setCurrentIndex(self.get_combo_box_index()-1)
 
-    def last_page(self): # пролистывание вперед
+    def next_page(self): # пролистывание вперед
         return self.pageBox.setCurrentIndex(self.get_combo_box_index()+1)
 
 if __name__ == '__main__':
