@@ -5,7 +5,7 @@ import shutil
 
 
 def extract(link):  # запись содержимого архива во временную директорию
-    temp = os.path.join(expanduser('~/.current/'), splitext(basename(link))[0])  # '~/.current/'
+    temp = os.path.join(expanduser('~/.current/'), splitext(basename(link))[0]) 
     if exists(temp):
         shutil.rmtree(temp)
     os.makedirs(temp)
