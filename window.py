@@ -75,7 +75,6 @@ class Example(QMainWindow):
         self.backward.triggered.connect(self.previous_page)
         self.forward.triggered.connect(self.next_page)
         self.open.triggered.connect(self.show_dialog)
-        # self.startOpenBtn.clicked.connect(self.show_dialog)
         self.sizeCheck.stateChanged.connect(self.change_size)
         self.closeFile.triggered.connect(self.close)
         self.pageBox.currentIndexChanged.connect(self.open_page)
